@@ -5,7 +5,7 @@ import fsn from 'fs';
 import { fileURLToPath } from 'url';
 
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
 // These two lines are needed to get __dirname in ES modules
 const __filename = fileURLToPath(import.meta.url);
