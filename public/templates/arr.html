@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="id3">
+    <button type="submit" id="id2">Submit</button>
+    <script>
+    document.getElementById("id2").addEventListener("click", () => {
+        let userInput = document.getElementById('id3').value;
+        userInput = userInput.replace(/^"(.*)"$/, '$1');
+        const doubleSlashed = userInput.replace(/\\/g, '\\\\');
+        fetch("http://localhost:3000/Arcode", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ a: doubleSlashed })
+        });
+    });
+</script>
+</body>
+
+</html>
