@@ -13,6 +13,6 @@
   "dependencies": {
     "express": "^4.21.2"
   },
-  engines: {
+  "engines": {
     "node": "24.x"
 }
